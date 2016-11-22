@@ -1,7 +1,5 @@
 package com.test.controller;
 
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,11 +18,13 @@ public class WebController {
     public String loginPage(){
         return "login";
     }
-
-    @RequestMapping(value = "/user/userInfo",method = RequestMethod.GET)
-//    @RequiresRoles("admin")
+    @RequestMapping(value = "/userInfo",method = RequestMethod.GET)
     public String userInfo(){
         return "/user/userInfo";
+    }
+    @RequestMapping(value = "/webSocketPage",method = RequestMethod.GET)
+    public String webSocketPage(){
+        return "/websocket";
     }
 
 }
